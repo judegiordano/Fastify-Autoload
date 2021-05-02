@@ -4,7 +4,7 @@ import { Article } from "../../../../Repositories/ArticleRepository";
 
 export default async (fastify: FastifyInstance): Promise<void> => {
 	fastify.get("/", {
-		preValidation: [fastify.authenticate],
+		preValidation: [fastify.restrict],
 		schema: {
 			response: {
 				200: {

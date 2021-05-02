@@ -10,7 +10,7 @@ interface IRequest {
 
 export default async (fastify: FastifyInstance): Promise<void> => {
 	fastify.post("/", {
-		preValidation: [fastify.authenticate],
+		preValidation: [fastify.restrict],
 		schema: {
 			body: {
 				type: "object",

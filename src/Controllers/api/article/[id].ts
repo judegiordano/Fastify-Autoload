@@ -8,7 +8,7 @@ interface IRequest {
 
 export default async (fastify: FastifyInstance): Promise<void> => {
 	fastify.get("/:id", {
-		preValidation: [fastify.authenticate],
+		preValidation: [fastify.restrict],
 		schema: {
 			params: {
 				type: "object",
@@ -46,7 +46,7 @@ export default async (fastify: FastifyInstance): Promise<void> => {
 	});
 
 	fastify.delete("/:id", {
-		preValidation: [fastify.authenticate],
+		preValidation: [fastify.restrict],
 		schema: {
 			params: {
 				type: "object",

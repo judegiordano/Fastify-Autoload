@@ -12,6 +12,7 @@ export class Config {
 	private static readonly _DB_NAME = process.env["DB_NAME"];
 	private static readonly _DB_SYNC = process.env["DB_SYNC"];
 	private static readonly _DB_LOGGING = process.env["DB_LOGGING"];
+	private static readonly _JWT_SECRET = process.env["JWT_SECRET"];
 
 	public static readonly Options = {
 		APPCODE: Config._APPCODE,
@@ -23,6 +24,7 @@ export class Config {
 		DB_PASSWORD: Config._DB_PASSWORD,
 		DB_NAME: Config._DB_NAME,
 		DB_SYNC: Config._DB_SYNC,
-		DB_LOGGING: Config._DB_LOGGING
+		DB_LOGGING: Config._DB_LOGGING,
+		JWT_SECRET: Config._JWT_SECRET as string
 	}
 }

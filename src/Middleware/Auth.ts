@@ -5,7 +5,7 @@ import { Config } from "../Helpers/Config";
 const { Options } = Config;
 
 export default plugin(async (fastify: FastifyInstance): Promise<void> => {
-	fastify.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
+	fastify.decorate("restrict", async (request: FastifyRequest, reply: FastifyReply) => {
 		const { appcode, apptoken } = request.headers;
 
 		if (!appcode || !apptoken) {
